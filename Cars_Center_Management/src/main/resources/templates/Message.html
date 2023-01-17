@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./Message/Message.css" rel="stylesheet">
+<link href="./Message/Message.css" rel="stylesheet">
+<script src="./Message/jquery-1.12.4.min.js"></script>
+<script src="./Message/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+<ul id="Breadcrumb1">
+<li><a href="/">Cars Center</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_Form1" style="position:absolute;left:257px;top:130px;width:495px;height:416px;z-index:8;">
+<form name="Form1" method="post" th:action="@{/Message}"  enctype="multipart/form-data" id="Form1">
+<input type="email" id="sender" style="position:absolute;left:21px;top:60px;width:445px;height:16px;z-index:1;" name="senderemail" value="" spellcheck="false" placeholder="Sender email">
+<label  id="Label1" style="position:absolute;left:177px;top:14px;width:133px;height:28px;line-height:28px;z-index:2;">Message</label>
+<input type="submit" id="Button1" name="Send" value="Send" style="position:absolute;left:199px;top:370px;width:96px;height:25px;z-index:3;">
+<textarea name="TextArea1" id="TextArea1" style="position:absolute;left:21px;top:143px;width:445px;height:148px;z-index:4;" rows="9" cols="53" spellcheck="false" placeholder="Content"></textarea>
+<input type="email" id="receiveremail" style="position:absolute;left:21px;top:101px;width:445px;height:16px;z-index:6;" name="receiveremail" value="" spellcheck="false" placeholder="Receiver email">
+</form>
+</div>
+</body>
+</html>

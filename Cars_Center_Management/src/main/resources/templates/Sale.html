@@ -1,0 +1,69 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./Sale/font-awesome.min.css" rel="stylesheet">
+<link href="./Sale/Sale.css" rel="stylesheet">
+<link href="./Sale/Sale.css" rel="stylesheet">
+<script src="./Sale/jquery-1.12.4.min.js"></script>
+<script src="./Sale/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+});
+</script>
+</head>
+
+<body>
+
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+<ul id="Breadcrumb1">
+<li><a href="/">Cars Center</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_ResponsiveMenu1" style="display:inline-block;width:398px;height:69px;z-index:1;">
+<label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">Menu<span id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+<input type="checkbox" id="ResponsiveMenu1-submenu">
+<ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+<li><a role="menuitem" href="Shopping"><i class="fa fa-shopping-cart fa-2x">&nbsp;</i><br>Shopping</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="wb_Form1" style="position:absolute;left:257px;top:130px;width:345px;height:215px;z-index:7;">
+    <form name="Form1" method="post" th:object="${cars}" th:action="@{/Shopping}" enctype="multipart/form-data" id="Form1">
+        <input type="text" th:field="*{buyername}" id="BuyerName" style="position:absolute;left:25px;top:118px;width:294px;height:16px;z-index:2;" name="BuyerName" value="" spellcheck="false" placeholder="Buyer Name">
+        <label id="Label1" style="position:absolute;left:107px;top:21px;width:133px;height:20px;line-height:20px;z-index:3;">Sale</label>
+        <input type="number" hidden="hidden" th:field="*{id}">
+        <input type="text" hidden="hidden" th:field="*{username}">
+        <input type="number" hidden="hidden"  th:field="*{price}">
+        <input type="number" hidden="hidden" th:field="*{numberseats}">
+        <input type="number" hidden="hidden" th:field="*{sellingprice}">
+        <input type="text" hidden="hidden" th:field="*{name}">
+        <input type="number" hidden="hidden" th:field="*{version}">
+        <input type="submit" id="Button1" name="Save" value="Save" style="position:absolute;left:124px;top:164px;width:96px;height:25px;z-index:4;">
+        <label  id="Label2" th:text="${'Selling Price:'+cars.sellingprice+' $'}" style="position:absolute;left:24px;top:71px;width:297px;height:22px;line-height:22px;z-index:5;"></label>
+    </form>
+</div>
+</body>
+</html>

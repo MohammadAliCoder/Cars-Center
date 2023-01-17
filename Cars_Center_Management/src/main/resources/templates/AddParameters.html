@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Add Parameters</title>
+<meta name="generator" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./AddCar/font-awesome.min.css" rel="stylesheet">
+<link href="./AddCar/AddCar.css" rel="stylesheet">
+<script src="./AddCar/jquery-1.12.4.min.js"></script>
+<script src="./AddCar/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+<ul id="Breadcrumb1">
+<li><a href="/MainHome">Cars Center</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_ResponsiveMenu1" style="display:inline-block;width:398px;height:69px;z-index:1;">
+<label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">Menu<span id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+<input type="checkbox" id="ResponsiveMenu1-submenu">
+<ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+<li><a role="menuitem" href="/parameters"><i class="fa fa-home fa-2x">&nbsp;</i><br>Parameters Home</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="wb_Form1" style="position:absolute;left:257px;top:130px;width:345px;height:234px;z-index:8;">
+    <form name="Form1" method="post" th:action="@{/addParameter}" th:object="${parameter}" enctype="multipart/form-data" id="Form1">
+
+        <label  id="Label1" style="position:absolute;left:107px;top:21px;width:133px;height:20px;line-height:20px;z-index:5;">Add Parameters</label>
+
+        <label class="Label2" style="position:absolute;left:1px;top:60px;width:100px;height:16px;z-index:2;">Profit</label>
+        <input type="text" th:field="*{value}" id="nameCar" style="position:absolute;left:101px;top:60px;width:202px;height:16px;z-index:2;" name="nameCar" value="" spellcheck="false" >
+
+        <label class="Label2" style="position:absolute;left:1px;top:142px;width:100px;height:16px;z-index:3;">Number Seats</label>
+        <input type="number" th:field="*{seats}" id="NumberSeals" style="position:absolute;left:101px;top:142px;width:202px;height:16px;z-index:3;" name="NumberSeals"  spellcheck="false" >
+
+        <input type="submit" id="Button1" name="Save" value="Save" style="position:absolute;left:124px;top:188px;width:96px;height:25px;z-index:6;">
+    </form>
+</div>
+
+
+</body>
+</html>

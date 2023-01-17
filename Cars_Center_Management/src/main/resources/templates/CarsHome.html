@@ -1,0 +1,86 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./CarsHome/font-awesome.min.css" rel="stylesheet">
+<link href="./CarsHome/CarsHome.css" rel="stylesheet">
+<script src="./CarsHome/jquery-1.12.4.min.js"></script>
+<script src="./CarsHome/jquery-ui.min.js"></script>
+<script src="./CarsHomesearchindex.js"></script>
+<script src="./CarsHome/wb.sitesearch.min.js"></script>
+<script src="./CarsHome/wwb15.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+   searchParseURL('SiteSearch1');
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+<ul id="Breadcrumb1">
+<li><a href="/">Cars Center</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_ResponsiveMenu1" style="display:inline-block;width:370px;height:69px;z-index:1;">
+<label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">Menu<span id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+<input type="checkbox" id="ResponsiveMenu1-submenu">
+<ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+<li><a role="menuitem" href="/AddCar"><i class="fa fa-cart-plus fa-2x">&nbsp;</i><br>Add&nbsp;Car</a></li>
+<li><a role="menuitem" href="/MyCars"><i class="fa fa-car fa-2x">&nbsp;</i><br>Show&nbsp;My&nbsp;Cars</a></li>
+   <li><a role="menuitem" href="/Shopping"><i class="fa fa-shopping-cart fa-2x">&nbsp;</i><br>Shopping</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-3">
+<form name="SiteSearch1_form" th:action="@{/CarsHome}" method="get" id="SiteSearch1_form" role="search" accept-charset="UTF-8" style="display:inline" >
+<input type="text" id="SiteSearch1" style="display:block;width: 100%;height:26px;z-index:2;" name="search" value="" spellcheck="false" placeholder="Search this website" role="searchbox">
+
+   <select  name="selected" size="1" id="Combobox1" style="width: 50%;height:28px;">
+      <option  value="Name" selected>Name</option>
+      <option value="Price">Price</option>
+      <option value="Number of Seats">Number of Seats</option>
+   </select>
+
+</form>
+
+</div>
+</div>
+</div>
+</div>
+	
+<br/>	
+<div id="FlexContainer1" th:each="car : ${list}">
+	
+<div id="wb_Card1" style=";text-align:center;z-index:4;">
+   <div id="Card1-card-header" th:text="${car.getName()}"> </div>
+   <div id="Card1-card-body">
+      <div id="Card1-card-item1"><h4 th:text="${'Price : '+car.getPrice()+' $'}"></h4>
+         <h4 th:text="${'Number of Sale : '+car.getNumberseats()}"></h4>
+         <h4 th:text="${'Date of Sale : '+car.getDatesale()}"></h4>
+         <h4 th:text="${'Selling Price : '+car.getSellingprice()}"></h4>
+         <h4 th:text="${'Buyer Name : '+car.getBuyername()}"></h4>
+         <h5 th:text="${'User Name : '+car.getUsername()}"></h5>
+         <h5  th:text="${'Version'+car.version}"></h5>
+      </div>
+   </div>
+
+</div>
+</div>
+</body>
+</html>

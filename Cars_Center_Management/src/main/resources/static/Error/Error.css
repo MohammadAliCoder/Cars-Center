@@ -1,0 +1,32 @@
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#wb_Heading1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+	margin-left: 15%;
+	margin-right: 25%;
+	width: 100%;
+}
+#Heading1
+{
+   color: #007BFF;
+   font-family: Arial;
+   font-weight: bold;
+   font-size: 160px;
+   margin: 0;
+   text-align: center;
+}

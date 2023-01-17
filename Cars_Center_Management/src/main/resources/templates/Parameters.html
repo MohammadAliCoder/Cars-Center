@@ -1,0 +1,96 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./MyCars/font-awesome.min.css" rel="stylesheet">
+<link href="./MyCars/MyCars.css" rel="stylesheet">
+<script src="./MyCars/jquery-1.12.4.min.js"></script>
+<script src="./MyCars/jquery-ui.min.js"></script>
+<script src="searchindex.js"></script>
+<script src="./MyCars/wb.sitesearch.min.js"></script>
+<script>
+var features = 'toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,status=no,left=,top=,width=,height=';
+function searchPage(features)
+{
+   var element = document.getElementById('SiteSearch1');
+   window.open('sitesearch1-results.html?q='+encodeURIComponent(element.value), '', features);
+   return false;
+}
+</script>
+<script src="./MyCars/wwb15.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+   searchParseURL('SiteSearch1');
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+<ul id="Breadcrumb1">
+<li><a href="/">Cars Center</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_ResponsiveMenu1" style="display:inline-block;width:370px;height:69px;z-index:1;">
+<label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">Menu<span id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+<input type="checkbox" id="ResponsiveMenu1-submenu">
+<ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+<li><a role="menuitem" href="/CarsHome"><i class="fa fa-home fa-2x">&nbsp;</i><br>Cars Home</a></li>
+<li><a role="menuitem" href="/addParameter"><i class="fa fa-plus fa-2x">&nbsp;</i><br>Add Parameter</a></li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<br/>
+
+
+<div id="FlexContainer1" th:each="para : ${listparameter}">
+<div id="wb_Card1" style="text-align:center;z-index:4;">
+
+   <div id="Card1-card-header" th:text="${para.id}">Header</div>
+   <div id="Card1-card-body">
+
+      <div id="Card1-card-item1">
+      	 <h4 th:text="${'Profit : '+para.value+' %  $'}"></h4>
+         <h4 th:text="${'Number of Seats: '+para.seats}"></h4>
+         
+
+      </div>
+
+
+      <form  style="display: inline-block" th:action="@{/parameters}"  method="post">
+         <input hidden="hidden" type="number" name="id" th:value="${para.id}">
+         <button id="Card1-card-item2" name="Delete">Delete</button>
+      </form>
+
+
+      <form  style="display: inline-block" th:action="@{/updateParameter}"  method="post">
+         <input hidden="hidden" type="number" name="id" th:value="${para.id}">
+      <button id="Card1-card-item3"  name="Update">Update</button>
+      </form>
+
+   </div>
+
+
+</div>
+</div>
+</body>
+</html>

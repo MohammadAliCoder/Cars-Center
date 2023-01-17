@@ -1,0 +1,93 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./MainHome/font-awesome.min.css" rel="stylesheet">
+<link href="./MainHome/MainHome.css" rel="stylesheet">
+<script src="./MainHome/jquery-1.12.4.min.js"></script>
+<script src="./MainHome/wb.panel.min.js"></script>
+<script src="./MainHome/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("#PanelMenu1").panel({animate: true, animationDuration: 200, animationEasing: 'linear', dismissible: true, display: 'overlay', position: 'right', toggle: true, overlay: true});
+   $("a[href*='#LayoutGrid4']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid4').offset().top-88 }, 600, 'easeOutCirc');
+   });
+});
+</script>
+</head>
+<body>
+
+<div id="wb_PageHeader">
+<div id="PageHeader">
+<div class="row">
+<div class="col-1">
+<div id="wb_FontAwesomeIcon1" style="display:inline-block;width:40px;height:40px;text-align:center;z-index:0;">
+<a href="/login"><div id="FontAwesomeIcon1"><i class="fa fa-user-circle-o"></i></div></a>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Heading1" style="display:inline-block;width:100%;z-index:1;">
+<h1 id="Heading1">WWW.Cars Center.Com</h1>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_PanelMenu1" style="display:inline-block;width:63px;height:70px;z-index:2;">
+<a href="#PanelMenu1_markup" id="PanelMenu1">&nbsp;</a>
+<div id="PanelMenu1_markup">
+<ul role="menu">
+   <li role="menuitem"><a href="/"><i class="fa fa-home fa-fw"></i><span>Home</span></a></li>
+   <li role="menuitem"><a href="/CarsHome"><i class="fa fa-car fa-fw"></i><span>Show Cars</span></a></li>
+   <li role="menuitem"><a href="/AddCar"><i class="fa fa-cart-plus fa-fw"></i><span>Add your car</span></a></li>
+   <li role="menuitem"><a href="/Message"><i class="fa fa-mail-forward fa-fw"></i><span>Message</span></a></li>
+   <li role="menuitem"><a href="/parameters"><i class="fa fa-wrench fa-fw"></i><span>Parameters</span></a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid4">
+<div id="LayoutGrid4">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_Card7" style="display:flex;width:100%;z-index:3;">
+   <div id="Card7-card-body">
+      <div id="Card7-card-item0"><i class="fa fa-info-circle"></i></div>
+      <div id="Card7-card-item1">About</div>
+      <div id="Card7-card-item2">Cars Selling Center</div>
+   </div>
+
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_Card8" style="display:flex;width:100%;z-index:4;">
+   <div id="Card8-card-body">
+      <div id="Card8-card-item0"><i class="fa fa-check"></i></div>
+      <div id="Card8-card-item1">Services</div>
+      <div id="Card8-card-item2">Show cars for sale , Sell your car</div>
+   </div>
+
+</div>
+</div>
+</div>
+<div class="col-3">
+<div class="col-3-padding">
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

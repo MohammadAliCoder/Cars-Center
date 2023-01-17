@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator">
+<link href="./signup/signup.css" rel="stylesheet">
+</head>
+<body>
+<div id="wb_Form1" style="position:absolute;left:257px;top:130px;width:345px;height:260px;z-index:7;">
+<form name="Form1" method="post" th:object="${user}" th:action="@{/signup}" enctype="multipart/form-data" id="Form1">
+<input type="text" id="nameCar" th:field="*{name}" style="position:absolute;left:16px;top:60px;width:302px;height:16px;z-index:0;"   spellcheck="false" placeholder="User Name">
+<label  id="Label1" style="position:absolute;left:102px;top:21px;width:133px;height:20px;line-height:20px;z-index:1;">Sign up</label>
+<input type="submit" id="Button1" name="Save" value="Save" style="position:absolute;left:124px;top:220px;width:96px;height:25px;z-index:2;">
+<input type="email" id="Email" style="position:absolute;left:16px;top:95px;width:302px;height:16px;z-index:3;" th:field="*{email}" spellcheck="false" placeholder="Email">
+<input type="password" id="password" style="position:absolute;left:16px;top:133px;width:302px;height:16px;z-index:4;" th:field="*{password}" spellcheck="false" placeholder="Password">
+<input type="text" id="Editbox2" style="position:absolute;left:16px;top:170px;width:302px;height:16px;z-index:6;" th:field="*{lastName}" placeholder="Last Name">
+</form>
+</div>
+</body>
+</html>

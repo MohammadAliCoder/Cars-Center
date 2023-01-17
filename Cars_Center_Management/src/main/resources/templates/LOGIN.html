@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" >
+<link href="./LOGIN/LOGIN.css" rel="stylesheet">
+</head>
+<body>
+<div id="wb_Form1" style="position:absolute;left:257px;top:130px;width:345px;height:205px;z-index:4;">
+<form name="Form1" method="post" th:action="@{/login}" enctype="multipart/form-data" id="Form1">
+<label  id="Label1" style="position:absolute;left:102px;top:21px;width:133px;height:20px;line-height:20px;z-index:0;">Login</label>
+<input type="submit" id="Button1" name="Login" value="Login" style="position:absolute;left:124px;top:170px;width:96px;height:25px;z-index:1;">
+<input type="email" id="Email" style="position:absolute;left:16px;top:66px;width:302px;height:16px;z-index:2;" name="email"  spellcheck="false" placeholder="Email">
+    <a href="/signup"  style="position:absolute;left:114px;top:140px;width:302px;height:16px;z-index:3"> Crate New Account </a>
+<input type="password" id="password" style="position:absolute;left:16px;top:106px;width:302px;height:16px;z-index:4;" name="password" spellcheck="false" placeholder="Password">
+</form>
+</div>
+</body>
+</html>
